@@ -10,10 +10,11 @@ buildscript {
         maven {
             url 'https://maven.google.com'
         }
+        google()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.android.tools.build:gradle:3.2.0'
     }
 }
 
@@ -25,7 +26,7 @@ android {
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
@@ -50,11 +51,12 @@ repositories {
     maven {
         url 'https://maven.google.com'
     }
+    google()
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.facebook.react:react-native:+'  // From node_modules
-    implementation group: 'com.android.support', name: 'support-v4', version: '27.0.0'
+    implementation group: 'androidx.legacy', name: 'legacy-support-v4', version: '1.0.0'
     implementation "com.google.zxing:core:3.3.0"
 }
